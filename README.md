@@ -13,38 +13,38 @@ Stretch Goals:
  * AVL Trees
 
 ## Completion Requirements
- * Module 1: Implement the Stack and Queue classes using built-in Python lists and the Node and LinkedList classes you created during the Module 1 Guided Project.
- * Module 2: Implement the Doubly Linked List class
- * Module 3: Implement the Binary Search Tree class
- * Module 4: Implement traversal methods on Binary Search Trees
+ - [X] Module 1: Implement the Stack and Queue classes using built-in Python lists and the Node and LinkedList classes you created during the Module 1 Guided Project.
+ - [X] Module 2: Implement the Doubly Linked List class
+ - [ ] Module 3: Implement the Binary Search Tree class
+ - [ ] Module 4: Implement traversal methods on Binary Search Trees
  
  > NOTE: The quickest and easiest way to reliably import a file in Python is to just copy and paste the file you want to import into the same directory as the file that wants to import. This obviously isn't considered best practice, but it is the most reliable way to do it across all platforms.  If the import isn't working, feel free to try this method.
 
 ### Stacks
-* Should have the methods: `push`, `pop`, and `len`.
-   * `push` adds an item to the top of the stack.
-   * `pop` removes and returns the element at the top of the stack
-   * `len` returns the number of elements in the stack.
+ * Should have the methods: `push`, `pop`, and `len`.
+   - [X] `push` adds an item to the top of the stack.
+   - [X] `pop` removes and returns the element at the top of the stack
+   - [X] `len` returns the number of elements in the stack.
 
 ### Queues
  * Has the methods: `enqueue`, `dequeue`, and `len`.
-   * `enqueue` adds an element to the back of the queue.
-   * `dequeue` removes and returns the element at the front of the queue.
-   * `len` returns the number of elements in the queue.
+   - [X] `enqueue` adds an element to the back of the queue.
+   - [X] `dequeue` removes and returns the element at the front of the queue.
+   - [X] `len` returns the number of elements in the queue.
  
 ![Image of Queue](https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/600px-Data_Queue.svg.png)
 
 ### Doubly Linked Lists
  * The `ListNode` class, which represents a single node in the doubly-linked list, has already been implemented for you. Inspect this code and try to understand what it is doing to the best of your ability.
  * The `DoublyLinkedList` class itself should have the methods: `add_to_head`, `add_to_tail`, `remove_from_head`, `remove_from_tail`, `move_to_front`, `move_to_end`, `delete`, and `get_max`.
-   * `add_to_head` replaces the head of the list with a new value that is passed in.
-   * `add_to_tail` replaces the tail of the list with a new value that is passed in.
-   * `remove_from_head` removes the head node and returns the value stored in it.
-   * `remove_from_tail` removes the tail node and returns the value stored in it.
-   * `move_to_front` takes a reference to a node in the list and moves it to the front of the list, shifting all other list nodes down. 
-   * `move_to_end` takes a reference to a node in the list and moves it to the end of the list, shifting all other list nodes up. 
-   * `delete` takes a reference to a node in the list and removes it from the list. The deleted node's `previous` and `next` pointers should point to each afterwards.
-   * `get_max` returns the maximum value in the list. 
+   - [X] `add_to_head` replaces the head of the list with a new value that is passed in.
+   - [X] `add_to_tail` replaces the tail of the list with a new value that is passed in.
+   - [X] `remove_from_head` removes the head node and returns the value stored in it.
+   - [X] `remove_from_tail` removes the tail node and returns the value stored in it.
+   - [X] `move_to_front` takes a reference to a node in the list and moves it to the front of the list, shifting all other list nodes down. 
+   - [X] `move_to_end` takes a reference to a node in the list and moves it to the end of the list, shifting all other list nodes up. 
+   - [X] `delete` takes a reference to a node in the list and removes it from the list. The deleted node's `previous` and `next` pointers should point to each afterwards.
+   - [X] `get_max` returns the maximum value in the list. 
  * The `head` property is a reference to the first node and the `tail` property is a reference to the last node.
  
 ![Image of Doubly Linked List](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png)
