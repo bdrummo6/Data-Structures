@@ -39,7 +39,9 @@ class Stack:
         new_node = Node(value)
         value = new_node.get_value()
         if self.head is None:
+            new_node.set_next(None)
             self.head = new_node
+            self.tail = new_node
             self.size += 1
         else:
             new_node.set_next(self.head)
@@ -51,11 +53,14 @@ class Stack:
     def pop(self):
         if self.head is None:
             return None
+        elif self.head.get_next() is None:
+            value = self.head.get_value()
+            self.head = None
+            self.tail = None
+            self.size -= 1
         else:
-            pop_node = self.head
-            value = pop_node.get_value()
+            value = self.head.get_value()
             self.head = self.head.get_next()
-            pop_node.set_next(None)
             self.size -= 1
 
         return value
@@ -80,3 +85,5 @@ class Stack:
         return self.storage.pop()
 
 """
+
+
