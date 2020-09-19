@@ -17,6 +17,10 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
+        self.length = 0
+
+    def __len__(self):
+        return self.length
 
     def add_to_tail(self, value):
         new_node = Node(value)
@@ -24,20 +28,24 @@ class LinkedList:
         if self.head is None and self.tail is None:
             self.head = new_node
             self.tail = new_node
+            self.length += 1
         else:
             self.tail.set_next(new_node)
             self.tail = new_node
+            self.length += 1
+
+        return value
 
     def remove_tail(self):
         # check for empty list
         if self.head is None and self.tail is None:
             return None
         # check if there is only one node
-        if self.head == self.tail:
+        elif self.head == self.tail:
             value = self.tail.get_value()
             self.head = None
             self.tail = None
-            return value
+            self.length -= 1
         else:
             value = self.tail.get_value()
             current_node = self.head
@@ -48,21 +56,26 @@ class LinkedList:
 
             self.tail = current_node
             self.tail.set_next(None)
-            return value
+            self.length -= 1
+
+        return value
 
     def remove_head(self):
         # check for empty list
         if self.head is None and self.tail is None:
             return None
+
         if self.head == self.tail:
             value = self.head.get_value()
             self.head = None
             self.tail = None
-            return value
+            self.length -= 1
         else:
             value = self.head.get_value()
             self.head = self.head.get_next()
-            return value
+            self.length -= 1
+
+        return value
 
 
 
