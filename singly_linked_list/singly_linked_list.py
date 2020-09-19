@@ -25,7 +25,7 @@ class LinkedList:
     def add_to_tail(self, value):
         new_node = Node(value)
         # checks if the linked list is empty
-        if self.head is None and self.tail is None:
+        if self.head is None:
             self.head = new_node
             self.tail = new_node
             self.length += 1
@@ -38,7 +38,7 @@ class LinkedList:
 
     def remove_tail(self):
         # check for empty list
-        if self.head is None and self.tail is None:
+        if self.head is None:
             return None
         # check if there is only one node
         elif self.head == self.tail:
@@ -48,10 +48,9 @@ class LinkedList:
             self.length -= 1
         else:
             value = self.tail.get_value()
-            current_node = self.head
 
+            current_node = self.head
             while current_node.get_next() != self.tail:
-                # keep looping
                 current_node = current_node.get_next()
 
             self.tail = current_node
@@ -62,10 +61,9 @@ class LinkedList:
 
     def remove_head(self):
         # check for empty list
-        if self.head is None and self.tail is None:
+        if self.head is None:
             return None
-
-        if self.head == self.tail:
+        elif self.head == self.tail:
             value = self.head.get_value()
             self.head = None
             self.tail = None
