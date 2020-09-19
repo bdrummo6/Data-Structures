@@ -36,38 +36,37 @@ class Queue:
         self.tail = None
 
     def __len__(self):
-        if self.head is None:
-            self.tail = None
-            return 0
-        else:
-            self.size = 1
-            curr_node = self.head
-            while curr_node.get_next() is not None:
-                self.size += 1
-                curr_node = curr_node.get_next()
-
-            return self.size
+        return self.size
 
     def enqueue(self, value):
         new_node = Node(value)
         value = new_node.get_value()
         if self.tail is None:
             self.head = self.tail = new_node
-            return value
+            self.size += 1
         else:
             self.tail.set_next(new_node)
             self.tail = new_node
-            return value
+            self.size += 1
+
+        return value
 
     def dequeue(self):
-        if self.head is None and self.tail is None:
+        if self.size == 0:
             return None
+        elif self.size == 1:
+            value = self.head.get_value()
+            self.head = None
+            self.tail = None
+            self.size -= 1
         else:
             value = self.head.get_value()
             exit_node = self.head
+            print(value)
             self.head = exit_node.get_next()
-            return value
+            self.size -= 1
 
+        return value
 
 """
 # Implemented using an array
