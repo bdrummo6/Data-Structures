@@ -62,7 +62,6 @@ class Queue:
         else:
             value = self.head.get_value()
             exit_node = self.head
-            print(value)
             self.head = exit_node.get_next()
             self.size -= 1
 
