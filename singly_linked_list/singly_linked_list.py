@@ -17,10 +17,17 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
-        self.length = 0
+        self.size = 0
 
     def __len__(self):
-        return self.length
+        self.size = 0
+
+        curr_node = self.head
+        while curr_node:
+            self.size += 1
+            curr_node = curr_node.get_next()
+
+        return self.size
 
     def add_to_tail(self, value):
         new_node = Node(value)
@@ -28,11 +35,9 @@ class LinkedList:
         if self.head is None:
             self.head = new_node
             self.tail = new_node
-            self.length += 1
         else:
             self.tail.set_next(new_node)
             self.tail = new_node
-            self.length += 1
 
         return value
 
@@ -45,7 +50,6 @@ class LinkedList:
             value = self.tail.get_value()
             self.head = None
             self.tail = None
-            self.length -= 1
         else:
             value = self.tail.get_value()
 
@@ -55,7 +59,6 @@ class LinkedList:
 
             self.tail = current_node
             self.tail.set_next(None)
-            self.length -= 1
 
         return value
 
@@ -67,13 +70,12 @@ class LinkedList:
             value = self.head.get_value()
             self.head = None
             self.tail = None
-            self.length -= 1
         else:
             value = self.head.get_value()
             self.head = self.head.get_next()
-            self.length -= 1
 
         return value
+
 
 
 
