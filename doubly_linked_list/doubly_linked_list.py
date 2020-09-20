@@ -39,6 +39,12 @@ class DoublyLinkedList:
         self.length = 1 if node is not None else 0
 
     def __len__(self):
+        self.length = 0
+        curr_node = self.head
+        while curr_node:
+            self.length += 1
+            curr_node = curr_node.get_next()
+
         return self.length
 
     """
@@ -52,12 +58,10 @@ class DoublyLinkedList:
         if not self.head:
             self.head = self.tail = new_node
             self.head.set_prev(None)
-            self.length += 1
         else:
             new_node.set_next(self.head)
             new_node.set_prev(None)
             self.head = new_node
-            self.length += 1
 
         return value
 
@@ -70,15 +74,13 @@ class DoublyLinkedList:
     def remove_from_head(self):
         value = self.head.get_value()
         # check for empty list
-        if not self.head:
+        if self.head is None:
             return None
-        elif self.length == 1:
+        elif self.head.get_next() is None:
             self.head = self.tail = None
-            self.length -= 1
         else:
             self.head = self.head.get_next()
             self.head.set_prev(None)
-            self.length -= 1
 
         return value
 
@@ -90,9 +92,8 @@ class DoublyLinkedList:
 
     def add_to_tail(self, value):
         new_node = ListNode(value)
-        if self.length == 0:
+        if self.head is None:
             self.head = self.tail = new_node
-            self.length += 1
         else:
             curr_node = self.head
             while curr_node.get_next():
@@ -102,7 +103,6 @@ class DoublyLinkedList:
             self.tail = curr_node.get_next()
             self.tail.set_next(None)
             self.tail.set_prev(curr_node)
-            self.length += 1
 
         return value
 
@@ -114,13 +114,12 @@ class DoublyLinkedList:
 
     def remove_from_tail(self):
         # check for empty list
-        if self.length == 0:
+        if self.head is None:
             return None
         # check if there is only one node
-        elif self.length == 1:
+        elif self.head.get_next() is None:
             value = self.tail.get_value()
             self.head = self.tail = None
-            self.length -= 1
         else:
             value = self.tail.get_value()
             current_node = self.head
@@ -131,7 +130,6 @@ class DoublyLinkedList:
 
             self.tail = current_node.get_prev()
             self.tail.set_next(None)
-            self.length -= 1
 
         return value
 
@@ -141,7 +139,7 @@ class DoublyLinkedList:
     """
 
     def move_to_front(self, node):
-        if self.length == 0:
+        if self.head is None:
             return None
         else:
             value = node.get_value()
@@ -156,7 +154,7 @@ class DoublyLinkedList:
     """
 
     def move_to_end(self, node):
-        if self.length == 0:
+        if self.head is None:
             return None
         else:
             value = node.get_value()
@@ -172,7 +170,7 @@ class DoublyLinkedList:
 
     def delete(self, node):
         value = node.get_value()
-        if self.length == 0:
+        if self.head is None:
             return None
         elif self.head.get_value() == value:
             self.remove_from_head()
