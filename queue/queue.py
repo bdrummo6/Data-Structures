@@ -36,6 +36,13 @@ class Queue:
         self.tail = None
 
     def __len__(self):
+        curr_node = self.head
+        self.size = 0
+        # Loop while end of queue is not reached
+        while curr_node:
+            self.size += 1
+            curr_node = curr_node.get_next()
+
         return self.size
 
     def enqueue(self, value):
@@ -43,29 +50,26 @@ class Queue:
         value = new_node.get_value()
         if self.tail is None:
             self.head = self.tail = new_node
-            self.size += 1
         else:
             self.tail.set_next(new_node)
             self.tail = new_node
-            self.size += 1
 
         return value
 
     def dequeue(self):
-        if self.size == 0:
+        if self.head is None:
             return None
-        elif self.size == 1:
+        elif self.head.get_next() is None:
             value = self.head.get_value()
             self.head = None
             self.tail = None
-            self.size -= 1
         else:
             value = self.head.get_value()
             exit_node = self.head
             self.head = exit_node.get_next()
-            self.size -= 1
 
         return value
+
 
 """
 # Implemented using an array
