@@ -33,6 +33,13 @@ class Stack:
         self.tail = None
 
     def __len__(self):
+        curr_node = self.head
+        self.size = 0
+        # Loop while end of linked list is not reached
+        while curr_node:
+            self.size += 1
+            curr_node = curr_node.get_next()
+
         return self.size
 
     def push(self, value):
@@ -42,11 +49,9 @@ class Stack:
             new_node.set_next(None)
             self.head = new_node
             self.tail = new_node
-            self.size += 1
         else:
             new_node.set_next(self.head)
             self.head = new_node
-            self.size += 1
 
         return value
 
@@ -57,14 +62,11 @@ class Stack:
             value = self.head.get_value()
             self.head = None
             self.tail = None
-            self.size -= 1
         else:
             value = self.head.get_value()
             self.head = self.head.get_next()
-            self.size -= 1
 
         return value
-
 
 """
 # Implemented using an array
