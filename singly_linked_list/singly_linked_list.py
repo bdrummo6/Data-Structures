@@ -76,6 +76,34 @@ class LinkedList:
 
         return value
 
+"""
+ll = LinkedList()
 
+print(len(ll))  # 0
+ll.add_to_tail(14)
+print(ll.head.get_value())  # 14
+print(ll.tail.get_value())  # 14
+print(len(ll))  # 1
+ll.add_to_tail(56)
+print(ll.head.get_value())  # 14
+print(ll.tail.get_value())  # 56
+print(len(ll))  # 2
+ll.add_to_tail(35)
+print(ll.head.get_value())  # 14
+print(ll.tail.get_value())  # 35
+print(len(ll))  # 3
+ll.add_to_tail(76)
+print(ll.head.get_value())  # 14
+print(ll.tail.get_value())  # 76
+print(len(ll))  # 4
 
-
+print()
+ll.remove_tail()
+print(ll.head.get_value())  # 14
+print(ll.tail.get_value())  # 35
+print(len(ll))  # 3
+ll.remove_head()
+print(ll.head.get_value())  # 56
+print(ll.tail.get_value())  # 35
+print(len(ll))  # 2
+"""
