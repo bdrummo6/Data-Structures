@@ -23,8 +23,13 @@ class LinkedList:
         self.tail = None
         self.size = 0
 
+    # Returns the number of Nodes in a list
     def __len__(self):
+        self.size = 0
+
+        # Stores reference of head Node into a Node for iterating through a list
         curr_node = self.head
+
         # loops through until the end of the list, adding each 1 to size for each Node
         while curr_node is not None:
             self.size += 1
@@ -79,7 +84,7 @@ class LinkedList:
 
         return value
 
-"""
+
 ll = LinkedList()
 
 print(len(ll))  # 0
@@ -109,4 +114,3 @@ ll.remove_head()
 print(ll.head.get_value())  # 56
 print(ll.tail.get_value())  # 35
 print(len(ll))  # 2
-"""
