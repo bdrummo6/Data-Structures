@@ -1,4 +1,6 @@
 
+# Node class
+# Instances of Node contain a value and a pointer(reference) to the next Node in a list or None if at the end of a list
 class Node:
     def __init__(self, value, next=None):
         self.value = value
@@ -13,6 +15,8 @@ class Node:
     def set_next(self, new_next):
         self.next = new_next
 
+# (Singly) Linked List Class
+# Instances contain references to the head(start) and tail(end) of a list, plus size which holds the amount of Nodes
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -20,12 +24,11 @@ class LinkedList:
         self.size = 0
 
     def __len__(self):
-        self.size = 0
-
         curr_node = self.head
-        while curr_node:
+        # loops through until the end of the list, adding each 1 to size for each Node
+        while curr_node is not None:
             self.size += 1
-            curr_node = curr_node.get_next()
+            curr_node = curr_node.get_next()  # Moves to the next Node
 
         return self.size
 
