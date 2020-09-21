@@ -37,6 +37,7 @@ class LinkedList:
 
         return self.size
 
+    # Adds a Node with the given value at the end of a list
     def add_to_tail(self, value):
         new_node = Node(value)
         # checks if the linked list is empty
@@ -49,11 +50,12 @@ class LinkedList:
 
         return value
 
+    # Removes the Node at the end of the list
     def remove_tail(self):
-        # check for empty list
+        # check for empty list and returns None if it is
         if self.head is None:
             return None
-        # check if there is only one node
+        # check if there is only one node and sets both the head and tail to None
         elif self.head == self.tail:
             value = self.tail.get_value()
             self.head = None
@@ -70,8 +72,9 @@ class LinkedList:
 
         return value
 
+    # Removes the first Node in a list
     def remove_head(self):
-        # check for empty list
+        # check for empty list and returns None if it is
         if self.head is None:
             return None
         elif self.head == self.tail:
@@ -83,34 +86,3 @@ class LinkedList:
             self.head = self.head.get_next()
 
         return value
-
-
-ll = LinkedList()
-
-print(len(ll))  # 0
-ll.add_to_tail(14)
-print(ll.head.get_value())  # 14
-print(ll.tail.get_value())  # 14
-print(len(ll))  # 1
-ll.add_to_tail(56)
-print(ll.head.get_value())  # 14
-print(ll.tail.get_value())  # 56
-print(len(ll))  # 2
-ll.add_to_tail(35)
-print(ll.head.get_value())  # 14
-print(ll.tail.get_value())  # 35
-print(len(ll))  # 3
-ll.add_to_tail(76)
-print(ll.head.get_value())  # 14
-print(ll.tail.get_value())  # 76
-print(len(ll))  # 4
-
-print()
-ll.remove_tail()
-print(ll.head.get_value())  # 14
-print(ll.tail.get_value())  # 35
-print(len(ll))  # 3
-ll.remove_head()
-print(ll.head.get_value())  # 56
-print(ll.tail.get_value())  # 35
-print(len(ll))  # 2
