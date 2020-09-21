@@ -57,7 +57,7 @@ class Stack:
         return value
 
 """
-# Implemented using an array
+# Implemented using a list
 class Stack:
     def __init__(self):
         self.size = 0
