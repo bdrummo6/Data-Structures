@@ -39,8 +39,6 @@ class LinkedList:
             self.tail.set_next(new_node)
             self.tail = new_node
 
-        return value
-
     # Removes the Node at the end of the list
     def remove_tail(self):
         # check for empty list and returns None if it is
