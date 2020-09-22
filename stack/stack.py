@@ -29,8 +29,7 @@ class Stack:
         self.size += 1
         if self.head is None:
             new_node.set_next(None)
-            self.head = new_node
-            self.tail = new_node
+            self.head = self.tail = new_node
         else:
             new_node.set_next(self.head)
             self.head = new_node
@@ -43,8 +42,7 @@ class Stack:
         value = self.head.get_value()
         self.size -= 1
         if self.head.get_next() is None:
-            self.head = None
-            self.tail = None
+            self.head = self.tail = None
         else:
             value = self.head.get_value()
             self.head = self.head.get_next()
