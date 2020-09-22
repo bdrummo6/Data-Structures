@@ -41,8 +41,7 @@ class DoublyLinkedList:
         # check if the linked list is empty
         if not self.head and not self.tail:
             # if the list is initially empty, set both head and tail to the new node
-            self.head = new_node
-            self.tail = new_node
+            self.head = self.tail = new_node
         # we have a non-empty list, add the new node to the head
         else:
             # set the new node's `next` to refer to the current head
@@ -60,6 +59,7 @@ class DoublyLinkedList:
     def remove_from_head(self):
         value = self.head.value
         self.delete(self.head)
+
         return value
 
     """
@@ -71,8 +71,7 @@ class DoublyLinkedList:
         new_node = ListNode(value)
         self.length += 1
         if not self.tail and not self.head:
-            self.tail = new_node
-            self.head = new_node
+            self.tail = self.head = new_node
         else:
             new_node.prev = self.tail
             self.tail.next = new_node
@@ -86,6 +85,7 @@ class DoublyLinkedList:
     def remove_from_tail(self):
         value = self.tail.value
         self.delete(self.tail)
+
         return value
 
     """
@@ -94,7 +94,8 @@ class DoublyLinkedList:
     """
     def move_to_front(self, node):
         if node is self.head:
-            return
+            return None
+
         value = node.value
         self.delete(node)
         self.add_to_head(value)
@@ -105,7 +106,8 @@ class DoublyLinkedList:
     """
     def move_to_end(self, node):
         if node is self.tail:
-            return
+            return None
+
         value = node.value
         self.delete(node)
         self.add_to_tail(value)
@@ -115,8 +117,10 @@ class DoublyLinkedList:
     order of the other elements of the List.
     """
     def delete(self, node):
+        value = node.value
         if not self.head and not self.tail:
             return None
+
         if self.head is self.tail:
             self.head = None
             self.tail = None
@@ -131,6 +135,8 @@ class DoublyLinkedList:
 
         self.length -= 1
 
+        return value
+
     """
     Finds and returns the maximum value of all the nodes
     in the List.
@@ -138,11 +144,12 @@ class DoublyLinkedList:
     def get_max(self):
         if not self.head:
             return None
-        max_val = self.head.value
+        max_value = self.head.value
         current = self.head
         while current:
-            if current.value > max_val:
-                max_val = current.value
+            if current.value > max_value:
+                max_value = current.value
             current = current.next
-        return max_val
+
+        return max_value
 
