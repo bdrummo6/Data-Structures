@@ -46,8 +46,7 @@ class Queue:
         self.size -= 1
 
         if self.head.get_next() is None:
-            self.head = None
-            self.tail = None
+            self.head = self.tail = None
         else:
             exit_node = self.head
             self.head = exit_node.get_next()
