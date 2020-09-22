@@ -24,39 +24,31 @@ class Queue:
         self.tail = None
 
     def __len__(self):
-        self.size = 0
-
-        curr_node = self.head
-
-        # Loop while end of queue is not reached
-        while curr_node:
-            self.size += 1
-            curr_node = curr_node.get_next()
-
         return self.size
 
     # Adds a Node with the given value to the end of the Queue(linked list)
     def enqueue(self, value):
         new_node = Node(value)
-        value = new_node.get_value()
+        self.size += 1
+
         if self.tail is None:
             self.head = self.tail = new_node
         else:
             self.tail.set_next(new_node)
             self.tail = new_node
 
-        return value
-
     # Removes a Node from the front of the Queue(Linked list)
     def dequeue(self):
         if self.head is None:
             return None
-        elif self.head.get_next() is None:
-            value = self.head.get_value()
+
+        value = self.head.get_value()
+        self.size -= 1
+
+        if self.head.get_next() is None:
             self.head = None
             self.tail = None
         else:
-            value = self.head.get_value()
             exit_node = self.head
             self.head = exit_node.get_next()
 
