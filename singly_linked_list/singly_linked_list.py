@@ -25,21 +25,12 @@ class LinkedList:
 
     # Returns the number of Nodes in a list
     def __len__(self):
-        self.size = 0
-
-        # Stores reference of head Node into a Node for iterating through a list
-        curr_node = self.head
-
-        # loops through until the end of the list, adding each 1 to size for each Node
-        while curr_node is not None:
-            self.size += 1
-            curr_node = curr_node.get_next()  # Moves to the next Node
-
         return self.size
 
     # Adds a Node with the given value at the end of a list
     def add_to_tail(self, value):
         new_node = Node(value)
+        self.size += 1
         # checks if the linked list is empty
         if self.head is None:
             self.head = new_node
@@ -55,14 +46,14 @@ class LinkedList:
         # check for empty list and returns None if it is
         if self.head is None:
             return None
+
+        self.size -= 1
+        value = self.tail.get_value()
         # check if there is only one node and sets both the head and tail to None
-        elif self.head == self.tail:
-            value = self.tail.get_value()
+        if self.head == self.tail:
             self.head = None
             self.tail = None
         else:
-            value = self.tail.get_value()
-
             current_node = self.head
             while current_node.get_next() != self.tail:
                 current_node = current_node.get_next()
@@ -77,12 +68,46 @@ class LinkedList:
         # check for empty list and returns None if it is
         if self.head is None:
             return None
-        elif self.head == self.tail:
-            value = self.head.get_value()
+
+        self.size -= 1
+        value = self.head.get_value()
+
+        if self.head == self.tail:
             self.head = None
             self.tail = None
         else:
-            value = self.head.get_value()
             self.head = self.head.get_next()
 
         return value
+
+"""
+ll = LinkedList()
+
+print(len(ll))  # 0
+ll.add_to_tail(14)
+print(ll.head.get_value())  # 14
+print(ll.tail.get_value())  # 14
+print(len(ll))  # 1
+ll.add_to_tail(56)
+print(ll.head.get_value())  # 14
+print(ll.tail.get_value())  # 56
+print(len(ll))  # 2
+ll.add_to_tail(35)
+print(ll.head.get_value())  # 14
+print(ll.tail.get_value())  # 35
+print(len(ll))  # 3
+ll.add_to_tail(76)
+print(ll.head.get_value())  # 14
+print(ll.tail.get_value())  # 76
+print(len(ll))  # 4
+
+print()
+ll.remove_tail()
+print(ll.head.get_value())  # 14
+print(ll.tail.get_value())  # 35
+print(len(ll))  # 3
+ll.remove_head()
+print(ll.head.get_value())  # 56
+print(ll.tail.get_value())  # 35
+print(len(ll))  # 2
+"""
