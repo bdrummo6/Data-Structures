@@ -29,49 +29,64 @@ class LinkedList:
 
     # Adds a Node with the given value at the end of a list
     def add_to_tail(self, value):
+        # create new Node with the given value
         new_node = Node(value)
+        # increment the list's size by 1
         self.size += 1
         # checks if the linked list is empty
-        if self.head is None:
+        if not self.head:
+            # set the list's `head` and `tail` to reference the new node
             self.head = self.tail = new_node
+        # if list is not empty
         else:
+            # set the `tail` next reference to the new node
             self.tail.set_next(new_node)
+            # set the `tail` reference to the new node
             self.tail = new_node
 
     # Removes the Node at the end of the list
     def remove_tail(self):
         # check for empty list and returns None if it is
-        if self.head is None:
+        if not self.head:
             return None
 
-        self.size -= 1
+        # retrieves the `tail` node's value
         value = self.tail.get_value()
-        # check if there is only one node and sets both the head and tail to None
+        # check if there is only one node and sets both the `head` and `tail` to None
         if self.head == self.tail:
             self.head = self.tail = None
         else:
-            current_node = self.head
-            while current_node.get_next() != self.tail:
-                current_node = current_node.get_next()
+            curr_node = self.head
+            # loops until curr_node next reference does not point to the list's `tail`
+            while curr_node.get_next() != self.tail:
+                curr_node = curr_node.get_next()
 
-            self.tail = current_node
+            # sets the list's `tail` reference to curr_node
+            self.tail = curr_node
+            # sets the list's `tail` next reference to None
             self.tail.set_next(None)
+
+        # decrements the list's size by 1
+        self.size -= 1
 
         return value
 
     # Removes the first Node in a list
     def remove_head(self):
         # check for empty list and returns None if it is
-        if self.head is None:
+        if not self.head:
             return None
-
-        self.size -= 1
+        # retrieves the `head` node's value
         value = self.head.get_value()
-
+        # if there is only one node in the list then set `head` and `tail` to None
         if self.head == self.tail:
             self.head = self.tail = None
+        # if more than one node is in the list then set head's next reference to the `head` of the list
         else:
             self.head = self.head.get_next()
+
+        # decrement the list's size by 1
+        self.size -= 1
 
         return value
 
