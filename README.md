@@ -1,11 +1,11 @@
 # Data Structures 
 
 Topics:
- * Singly Linked Lists
- * Queues and Stacks
- * Doubly Linked Lists
- * Binary Search Trees
- * Related Code Challenge Problems
+ - [X] Singly Linked Lists
+ - [X] Queues and Stacks
+ - [X] Doubly Linked Lists
+ - [ ] Binary Search Trees
+ - [ ] Related Code Challenge Problems
 
 Stretch Goals:
  * LRU Cache
@@ -15,7 +15,7 @@ Stretch Goals:
 ## Completion Requirements
  - [X] Module 1: Implement the Stack and Queue classes using built-in Python lists and the Node and LinkedList classes you created during the Module 1 Guided Project.
  - [X] Module 2: Implement the Doubly Linked List class
- - [ ] Module 3: Implement the Binary Search Tree class
+ - [X] Module 3: Implement the Binary Search Tree class
  - [ ] Module 4: Implement traversal methods on Binary Search Trees
  
  > NOTE: The quickest and easiest way to reliably import a file in Python is to just copy and paste the file you want to import into the same directory as the file that wants to import. This obviously isn't considered best practice, but it is the most reliable way to do it across all platforms.  If the import isn't working, feel free to try this method.
@@ -27,7 +27,7 @@ Stretch Goals:
    - [X] `len` returns the number of elements in the stack.
 
 ### Queues
- - [x] Has the methods: `enqueue`, `dequeue`, and `len`.
+ - [X] Has the methods: `enqueue`, `dequeue`, and `len`.
    - [X] `enqueue` adds an element to the back of the queue.
    - [X] `dequeue` removes and returns the element at the front of the queue.
    - [X] `len` returns the number of elements in the queue.
@@ -50,11 +50,11 @@ Stretch Goals:
 ![Image of Doubly Linked List](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png)
 
 ### Binary Search Trees
- - [ ] Should have the methods `insert`, `contains`, `get_max`.
-  - [ ] `insert` adds the input value to the binary search tree, adhering to the rules of the ordering of elements in a binary search tree.
-  - [ ] `contains` searches the binary search tree for the input value, returning a boolean indicating whether the value exists in the tree or not.
-  - [ ] `get_max` returns the maximum value in the binary search tree.
-  - [ ] `for_each` performs a traversal of _every_ node in the tree, executing the passed-in callback function on each tree node value. There is a myriad of ways to perform tree traversal; in this case any of them should work. 
+ - [X] Should have the methods `insert`, `contains`, `get_max`.
+  - [X] `insert` adds the input value to the binary search tree, adhering to the rules of the ordering of elements in a binary search tree.
+  - [X] `contains` searches the binary search tree for the input value, returning a boolean indicating whether the value exists in the tree or not.
+  - [X] `get_max` returns the maximum value in the binary search tree.
+  - [X] `for_each` performs a traversal of _every_ node in the tree, executing the passed-in callback function on each tree node value. There is a myriad of ways to perform tree traversal; in this case any of them should work. 
 
 ![Image of Binary Search Tree](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png)
 
