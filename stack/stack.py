@@ -10,10 +10,10 @@ return elements in Last In First Out(LIFO) order.
 
 3. What is the difference between using a list vs. a linked list when implementing a Stack?
     - Implementing a Stack using a list allows you to use built-in functions to len(), append() and pop() to
-      get the length, add a node and remove a node from the top of the Stack. Using a linked list you have to keep
+      get the length, add a node and remove a node from the top of a Stack. Using a linked list you have to keep
       track of the length by incrementing or decrementing the length depending on whether you are adding or removing
-      a node from the stack. When adding or removing a node using a linked list you have to keep track of the next
-      reference of the next reference of the inserted or removed node.
+      a node from a stack. When adding or removing a node using a linked list you have to keep track of the next
+      reference of the inserted or removed node.
 """
 
 from node import Node
