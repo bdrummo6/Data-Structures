@@ -215,3 +215,42 @@ class DoublyLinkedList:
             print(curr_node.get_value())
             curr_node = curr_node.get_next()
 
+
+"""
+dll = DoublyLinkedList()
+
+# add_to_head
+dll.add_to_head(7)  # 7
+dll.add_to_head(12)  # 12 7
+dll.add_to_head(23)  # 23 12 7
+dll.add_to_head(35)  # 35 23 12 7
+dll.add_to_head(54)  # 54 35 23 12 7
+
+# remove_from_head
+dll.remove_from_head()  # 35 23 12 7
+
+# add_to_tail
+dll.add_to_tail(16)  # 35 23 12 7 16
+dll.add_to_tail(45)  # 35 23 12 7 16 45
+dll.add_to_tail(76)  # 35 23 12 7 16 45 76
+
+# remove_from_tail
+dll.remove_from_tail()  # 35 23 12 7 16 45
+
+# move_to_front
+dll.move_to_front(ListNode(16))  # 16 35 23 12 7 45
+
+# move_to_back
+dll.move_to_end(ListNode(23))  # 16 35 12 7 45 23
+
+# delete
+dll.delete(ListNode(12))  # 16 35 7 45 23
+
+dll.print_list()  # 16 35 7 45 23
+
+# list max value
+print('\nMax value: ' + str(dll.get_max()))  # 45
+
+# list length
+print('\nList Length: ' + str(len(dll)))  # 5
+"""
