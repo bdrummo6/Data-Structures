@@ -27,7 +27,8 @@ class Stack:
     def push(self, value):
         new_node = Node(value)
         self.size += 1
-        if self.head is None:
+
+        if not self.head:
             new_node.set_next(None)
             self.head = self.tail = new_node
         else:
@@ -36,7 +37,7 @@ class Stack:
 
     # Removes the Node at the top(head) of a list
     def pop(self):
-        if self.head is None:
+        if not self.head:
             return None
 
         value = self.head.get_value()
