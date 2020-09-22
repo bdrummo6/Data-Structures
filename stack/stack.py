@@ -1,6 +1,6 @@
 """
 A stack is a data structure whose primary purpose is to store and
-return elements in Last In First Out order. 
+return elements in Last In First Out(LIFO) order.
 
 1. Implement the Stack class using an array as the underlying storage structure.
    Make sure the Stack tests pass.
@@ -21,8 +21,9 @@ class Stack:
         self.tail = None
 
     def __len__(self):
-        curr_node = self.head
         self.size = 0
+
+        curr_node = self.head
         # Loop while end of linked list is not reached
         while curr_node:
             self.size += 1
@@ -30,6 +31,7 @@ class Stack:
 
         return self.size
 
+    # Adds a new Node with the given value to the top(head) of a list
     def push(self, value):
         new_node = Node(value)
         value = new_node.get_value()
@@ -43,6 +45,7 @@ class Stack:
 
         return value
 
+    # Removes the Node at the top(head) of a list
     def pop(self):
         if self.head is None:
             return None
