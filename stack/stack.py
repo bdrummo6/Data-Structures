@@ -21,20 +21,12 @@ class Stack:
         self.tail = None
 
     def __len__(self):
-        self.size = 0
-
-        curr_node = self.head
-        # Loop while end of linked list is not reached
-        while curr_node:
-            self.size += 1
-            curr_node = curr_node.get_next()
-
         return self.size
 
     # Adds a new Node with the given value to the top(head) of a list
     def push(self, value):
         new_node = Node(value)
-        value = new_node.get_value()
+        self.size += 1
         if self.head is None:
             new_node.set_next(None)
             self.head = new_node
@@ -43,14 +35,14 @@ class Stack:
             new_node.set_next(self.head)
             self.head = new_node
 
-        return value
-
     # Removes the Node at the top(head) of a list
     def pop(self):
         if self.head is None:
             return None
-        elif self.head.get_next() is None:
-            value = self.head.get_value()
+
+        value = self.head.get_value()
+        self.size -= 1
+        if self.head.get_next() is None:
             self.head = None
             self.tail = None
         else:
