@@ -4,7 +4,7 @@ Topics:
  - [X] Singly Linked Lists
  - [X] Queues and Stacks
  - [X] Doubly Linked Lists
- - [ ] Binary Search Trees
+ - [X] Binary Search Trees
  - [ ] Related Code Challenge Problems
 
 Stretch Goals:
@@ -50,7 +50,7 @@ Stretch Goals:
 ![Image of Doubly Linked List](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png)
 
 ### Binary Search Trees
- - [X] Should have the methods `insert`, `contains`, `get_max`.
+ - [X] Should have the methods `insert`, `contains`, `get_max`, `for_each`.
   - [X] `insert` adds the input value to the binary search tree, adhering to the rules of the ordering of elements in a binary search tree.
   - [X] `contains` searches the binary search tree for the input value, returning a boolean indicating whether the value exists in the tree or not.
   - [X] `get_max` returns the maximum value in the binary search tree.
