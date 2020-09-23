@@ -23,9 +23,12 @@ class ListNode:
     def set_prev(self, new_prev):
         self.prev = new_prev
 
+    # deletes a node by removing next and previous references to it from the nodes before it and after it in a list
     def delete(self):
+        # Sets the current node's previous node's next reference to the current node's next reference
         if self.prev:
             self.prev.set_next(self.get_next())
+        # Sets the current node's next node's previous reference to the current node's previous reference
         if self.next:
             self.next.set_prev(self.get_prev())
 
