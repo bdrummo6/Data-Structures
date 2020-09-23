@@ -19,11 +19,12 @@ Stretch: What if you could only use instances of your Stack class to implement t
          What would that look like? How many Stacks would you need? Try it!
 """
 
-from node import Node
+from singly_linked_list import *
 
 # Queue implemented using a Singly Linked List
-class Queue:
+class Queue(LinkedList):
     def __init__(self):
+        super().__init__()
         self.size = 0
         self.head = None
         self.tail = None
@@ -33,42 +34,21 @@ class Queue:
 
     # Adds a Node with the given value to the end of the Queue(linked list)
     def enqueue(self, value):
-        # create a new node using the given value
-        new_node = Node(value)
-        # increment the queue's size by 1
-        self.size += 1
-
-        # if the queue is empty then set the `head` and `tail` to the new node
-        if not self.tail:
-            self.head = self.tail = new_node
-        # if the queue is not empty then set the new node as the new `tail`
-        else:
-            # set the next reference of the current `tail` to the new node
-            self.tail.set_next(new_node)
-            # set the `tail` reference to the new node
-            self.tail = new_node
+        # call the add_to_tail function to add an item to the end of a Queue
+        self.add_to_tail(value)
 
     # Removes a Node from the front of the Queue(Linked list)
     def dequeue(self):
-        # if the list is empty return None
-        if not self.head:
-            return None
-
-        # retrieve the `head` node's value
-        value = self.head.get_value()
-
-        # if the queue contains only 1 node then set the `head` and `tail` to None
-        if not self.head.get_next():
-            self.head = self.tail = None
-        # if the queue contains more then 1 node then set the second node as the new `head`
-        else:
-            node = self.head
-            self.head = node.get_next()
-
-        # decrement the size of the queue by 1
-        self.size -= 1
+        # call the remove_head function to remove the first node in a Queue
+        value = self.remove_head()
 
         return value
+
+    def print_queue(self):
+        curr_node = self.head
+        while curr_node:
+            print(curr_node.get_value())
+            curr_node = curr_node.get_next()
 
 
 """
@@ -89,3 +69,19 @@ class Queue:
             return None
         return self.storage.pop()
 """
+
+q = Queue()
+
+q.enqueue(15)
+q.enqueue(17)
+q.enqueue(25)
+q.dequeue()
+q.enqueue(36)
+q.enqueue(17)
+q.dequeue()
+
+print()
+q.print_queue()  # 25 36 17
+
+print()
+print(len(q))  # 3

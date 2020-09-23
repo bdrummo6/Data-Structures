@@ -16,11 +16,12 @@ return elements in Last In First Out(LIFO) order.
       reference of the inserted or removed node.
 """
 
-from node import Node
+from singly_linked_list import *
 
 # Implemented using a linked list
-class Stack:
+class Stack(LinkedList):
     def __init__(self):
+        super().__init__()
         self.size = 0
         self.head = None
         self.tail = None
@@ -46,24 +47,16 @@ class Stack:
 
     # Removes the Node at the top(head) of a list
     def pop(self):
-        # if stack is empty return None
-        if not self.head:
-            return None
-        # retrieve the value of the current stack `head`
-        value = self.head.get_value()
-
-        # if the stack only contains 1 node then set the `head` and `tail` to None
-        if not self.head.get_next():
-            self.head = self.tail = None
-        # if the stack contains more than 1 node then set the second node in the stack as the new `head`
-        else:
-            value = self.head.get_value()
-            self.head = self.head.get_next()
-
-        # decrement the stack size by 1
-        self.size -= 1
+        # call remove_head from LinkedList to remove the head Node
+        value = LinkedList.remove_head(self)
 
         return value
+
+    def print_stack(self):
+        curr_node = self.head
+        while curr_node:
+            print(curr_node.get_value())
+            curr_node = curr_node.get_next()
 
 """
 # Implemented using a list
@@ -84,5 +77,27 @@ class Stack:
         return self.storage.pop()
 
 """
+
+s = Stack()
+
+s.push(15)
+s.push(17)
+s.push(24)
+s.pop()
+s.push(31)
+s.push(7)
+s.push(45)
+s.pop()
+
+print()
+print(len(s))  # 4
+
+print()
+s.print_stack()  # 7 31 17 15
+
+
+
+
+
 
 
