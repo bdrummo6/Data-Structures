@@ -29,7 +29,7 @@ class LinkedList:
 
     # Adds a Node with the given value at the end of a list
     def add_to_tail(self, value):
-        # create new Node with the given value
+        # create a new Node with the given value
         new_node = Node(value)
         # increment the list's size by 1
         self.size += 1
