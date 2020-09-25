@@ -21,13 +21,14 @@ class BSTNode:
 
     # Insert the given value into the tree
     def insert(self, value):
+        new_node = BSTNode(value)
         # Compare the new value with the parent node
         if self.value:
             # if value is less than the current parent node value
             if value < self.value:
                 # if there is no left child node then a new node with the value is inserted to the left
                 if not self.left:
-                    self.left = BSTNode(value)
+                    self.left = new_node
                 # if there is a left child node then insert is called on the left child node
                 else:
                     self.left.insert(value)
@@ -35,7 +36,7 @@ class BSTNode:
             elif value >= self.value:
                 # if there is no right child node then a new node with the value is inserted to the right
                 if not self.right:
-                    self.right = BSTNode(value)
+                    self.right = new_node
                 # if there is a right child node then insert is called on the right child node
                 else:
                     self.right.insert(value)
@@ -94,10 +95,11 @@ class BSTNode:
         # checks if the current node is None
         if not self:
             return None
+
+        fn(self.value)  # call the callback function fn on the current node's value
         # if there is a left child node of the current parent node then call for_each on the left child node
         if self.left:
             self.left.for_each(fn)
-        fn(self.value)  # call the callback function fn on the current node's value
         # if there is a right child node of the current parent node then call for_each on the right child node
         if self.right:
             self.right.for_each(fn)
