@@ -10,7 +10,7 @@ Topics:
 Stretch Goals:
  - [ ] LRU Cache
  - [ ] Heaps
- - [ ] AVL Trees
+ - [X] AVL Trees
 
 ## Completion Requirements
  - [X] Module 1: Implement the Stack and Queue classes using built-in Python lists and the Node and LinkedList classes you created during the Module 1 Guided Project.
