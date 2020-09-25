@@ -123,42 +123,42 @@ class BSTNode:
     # Print the value of every node, starting with the given node, in an iterative breadth first traversal
     def bft_print(self):
         # using a Queue for this function
-        bst_q = Queue()
+        q = Queue()
 
         # Insert the root node into the queue
-        bst_q.enqueue(self)
+        q.enqueue(self)
 
         # loops while the queue length is greater than 0
-        while len(bst_q) > 0:
+        while len(q) > 0:
             # removes front node and stores it into curr_node
-            curr_node = bst_q.dequeue()
+            curr_node = q.dequeue()
             print(curr_node.value)  # prints the curr_node value
             # if there is a left child node then insert the left child node into  queue
             if curr_node.left:
-                bst_q.enqueue(curr_node.left)
+                q.enqueue(curr_node.left)
             # if there is a right child node then insert the right child node into queue
             if curr_node.right:
-                bst_q.enqueue(curr_node.right)
+                q.enqueue(curr_node.right)
 
     # Print the value of every node, starting with the given node, in an iterative depth first traversal
     def dft_print(self):
         # using a Stack for this function
-        bst_s = Stack()
+        s = Stack()
         # push the root node onto the stack
-        bst_s.push(self)
+        s.push(self)
 
         # loops while stack is not empty
-        while len(bst_s) > 0:
+        while len(s) > 0:
             # removes the current node on top of the stack and stores it in curr_node
-            curr_node = bst_s.pop()
+            curr_node = s.pop()
             # prints the value of the node that was just removed
             print(curr_node.value)
             # if there is a left child node of node removed then it gets pushed onto the stacked
             if curr_node.left:
-                bst_s.push(curr_node.left)
+                s.push(curr_node.left)
             # if there is a right child node of node removed then it gets pushed onto the stacked
             if curr_node.right:
-                bst_s.push(curr_node.right)
+                s.push(curr_node.right)
 
     # Stretch Goals -------------------------
     # Note: Research may be required
