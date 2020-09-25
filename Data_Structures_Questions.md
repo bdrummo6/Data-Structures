@@ -95,19 +95,28 @@ Answer the following questions for each of the data structures you implemented a
     - Linear time: O(1)
 
     a. Compare the runtime of the doubly linked list's `delete` method with the worst-case runtime of the JS `Array.splice` method. Which method generally performs better?
-        - The runtime complexity of doubly linked list's `delete` has a runtime complexity of O(1). The worst case 
-          runtime complexity of JS `Array.splice` method is O(n). Doubly linked list's `delete` function generally 
-          performs better.
+        
+       - The runtime complexity of doubly linked list's `delete` has a runtime complexity of O(1). The worst case 
+         runtime complexity of JS `Array.splice` method is O(n). Doubly linked list's `delete` function generally 
+         performs better.
 
 ## Binary Search Tree
 
 1. What is the runtime complexity of `insert`? 
 
+    - O(log n)
+
 2. What is the runtime complexity of `contains`?
+
+    - O(log n)
 
 3. What is the runtime complexity of `get_max`? 
 
+    - O(n)
+
 4. What is the runtime complexity of `for_each`?
+
+    - O(n)
     
 ## Heap
 
